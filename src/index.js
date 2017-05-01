@@ -130,19 +130,15 @@ export default class Roundabout extends React.Component {
     return (
       <div className="Slider-nav">{nav}</div>
     );
-  },
+  }
 
   renderArrows() {
-    const {
-      children,
-      loop,
-      showNav,
-    } = this.props;
-    const { lastIndex } = this.state;
+    const {children, loop, showNav} = this.props;
+    const {lastIndex} = this.state;
     const arrowsClasses = showNav ? 'Slider-arrows' : 'Slider-arrows Slider-arrows--noNav';
 
     return (
-      <div className={ arrowsClasses }>
+      <div className={arrowsClasses}>
         { loop || lastIndex > 0 ?
           <button
             className='Slider-arrow Slider-arrow--left'
@@ -153,7 +149,7 @@ export default class Roundabout extends React.Component {
             onClick={ (event) => this.goToSlide(lastIndex + 1, event) } /> : null }
       </div>
     );
-  },
+  }
 
   render() {
     const {children, showArrows, showNav} = this.props;

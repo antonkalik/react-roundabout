@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:sass": "node-sass src/styles.scss lib/roundabout.min.css --output-style=compressed --source-map=true"
+    "sass": "node-sass src/styles.scss lib/roundabout.min.css --output-style=compressed --source-map=true",
+    "eslint": "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,8 @@
   },
   "homepage": "https://github.com/fknussel/react-roundabout#readme",
   "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
     "node-sass": "^4.5.2",
     "prop-types": "^15.5.8",
     "react": "^15.5.4"
