@@ -1,0 +1,27 @@
+{
+  "name": "react-roundabout",
+  "version": "0.0.0",
+  "description": "Carousel React component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fknussel/react-roundabout.git"
+  },
+  "keywords": [
+    "react-roundabout",
+    "react-carousel",
+    "react-slider",
+    "roundabout",
+    "carousel",
+    "slider"
+  ],
+  "author": "Federico Knüssel <fknussel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fknussel/react-roundabout/issues"
+  },
+  "homepage": "https://github.com/fknussel/react-roundabout#readme"
+}
