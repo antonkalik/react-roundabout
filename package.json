@@ -7,8 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass src/styles.scss lib/roundabout.min.css --output-style=compressed --source-map=true",
     "eslint": "eslint src/**/*.js",
+    "browserify": "browserify -i react -i prop-types src/index.js -o lib/roundabout.js -t [ babelify --presets [ es2015 react ] ]",
+    "build": "npm-run-all eslint browserify sass",
     "example:build": "browserify example/index.js -o example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
-    "example:serve": "http-server example -p 6789 -o"
+    "example:serve": "http-server example -p 6789 -o",
+    "example": "npm-run-all example:build example:serve"
   },
   "repository": {
     "type": "git",
@@ -37,8 +40,11 @@
     "eslint-plugin-react": "^6.10.3",
     "http-server": "^0.10.0",
     "node-sass": "^4.5.2",
-    "prop-types": "^15.5.8",
-    "react": "^15.5.4",
+    "npm-run-all": "^4.0.2",
     "react-dom": "^15.5.4"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4"
   }
 }
