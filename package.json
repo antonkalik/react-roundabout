@@ -8,7 +8,7 @@
     "sass": "node-sass src/styles.scss lib/roundabout.min.css --output-style=compressed --source-map=true",
     "eslint": "eslint src/**/*.js",
     "example:build": "browserify example/index.js -o example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
-    "example:preview": "http-server example -p 6789 -o"
+    "example:serve": "http-server example -p 6789 -o"
   },
   "repository": {
     "type": "git",
