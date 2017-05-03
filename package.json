@@ -4,14 +4,15 @@
   "description": "Carousel React component",
   "main": "lib/roundabout.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass src/styles.scss lib/roundabout.min.css --output-style=compressed --source-map=true",
+    "clean": "rimraf lib && mkdirp lib",
     "eslint": "eslint src/**/*.js",
     "babel": "babel src/index.js --out-file lib/roundabout.js --presets=es2015,react",
-    "build": "npm-run-all eslint babel sass",
+    "sass": "node-sass src/styles.scss lib/roundabout.min.css --output-style=compressed --source-map=true",
+    "build": "npm-run-all clean eslint babel sass",
     "example:build": "browserify example/index.js -o example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
     "example:serve": "http-server example -p 6789 -o",
-    "example": "npm-run-all example:build example:serve"
+    "example": "npm-run-all example:build example:serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -40,9 +41,11 @@
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.3",
     "http-server": "^0.10.0",
+    "mkdirp": "^0.5.1",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "rimraf": "^2.6.1"
   },
   "peerDependencies": {
     "prop-types": "^15.5.8",
