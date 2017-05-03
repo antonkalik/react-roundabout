@@ -7,7 +7,7 @@
     "clean": "rimraf lib && mkdirp lib",
     "eslint": "eslint src/**/*.js",
     "babel": "babel src/index.js --out-file lib/roundabout.js --presets=es2015,react",
-    "sass": "node-sass src/styles.scss lib/roundabout.min.css --output-style=compressed --source-map=true",
+    "sass": "node-sass src/styles.scss lib/roundabout.css --output-style=compressed --source-map=true",
     "build": "npm-run-all clean eslint babel sass",
     "example:build": "browserify example/index.js -o example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
     "example:serve": "http-server example -p 6789 -o",

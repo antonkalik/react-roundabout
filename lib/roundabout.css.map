@@ -1,6 +1,6 @@
 {
 	"version": 3,
-	"file": "roundabout.min.css",
+	"file": "roundabout.css",
 	"sources": [
 		"../src/styles.scss"
 	],
