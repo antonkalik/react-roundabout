@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Example = function Example() {
   return _react2.default.createElement(
     _index2.default,
-    { loop: true, showNav: false, selected: 2 },
+    { loop: true, showNav: true, selected: 2 },
     _react2.default.createElement(
       'div',
       { style: { background: '#21BB9A', height: '400px' } },

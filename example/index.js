@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import Roundabout from '../src/index';
 
 const Example = () => (
-  <Roundabout loop={true} showNav={false} selected={2}>
+  <Roundabout loop={true} showNav={true} selected={2}>
     <div style={{ background: '#21BB9A', height: '400px' }}>1</div>
     <div style={{ background: '#329ADD', height: '400px' }}>2</div>
     <div style={{ background: '#9A5CB9', height: '400px' }}>3</div>

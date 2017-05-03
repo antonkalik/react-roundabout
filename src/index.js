@@ -124,7 +124,7 @@ export default class Roundabout extends React.Component {
       return (
         <button key={index} className={buttonClasses} onClick={(event) => this.goToSlide(index, event)} />
       );
-    })
+    });
 
     return (
       <div className="Slider-nav">{nav}</div>
