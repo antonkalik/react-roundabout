@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass src/styles.scss lib/roundabout.min.css --output-style=compressed --source-map=true",
     "eslint": "eslint src/**/*.js",
-    "browserify": "browserify -i react -i prop-types src/index.js -o lib/roundabout.js -t [ babelify --presets [ es2015 react ] ]",
-    "build": "npm-run-all eslint browserify sass",
+    "babel": "babel src/index.js --out-file lib/roundabout.js --presets=es2015,react",
+    "build": "npm-run-all eslint babel sass",
     "example:build": "browserify example/index.js -o example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
     "example:serve": "http-server example -p 6789 -o",
     "example": "npm-run-all example:build example:serve"
@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/fknussel/react-roundabout#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babelify": "^7.3.0",
