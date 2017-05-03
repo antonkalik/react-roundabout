@@ -10,7 +10,7 @@
     "sass": "node-sass src/styles.scss lib/roundabout.css --output-style=compressed --source-map=true",
     "build": "npm-run-all clean eslint babel sass",
     "example:build": "browserify example/index.js -o example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
-    "example:serve": "http-server example -p 6789 -o",
+    "example:serve": "http-server -p 6789 -o",
     "example": "npm-run-all example:build example:serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
