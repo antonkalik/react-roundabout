@@ -42,13 +42,12 @@ export default class Roundabout extends React.Component {
       dragStart: x,
       dragStartTime: new Date(),
       transition: false,
-      slideWidth: ReactDOM.findDOMNode(this.refs.slider).offsetWidth,
+      slideWidth: this.refs.slider.offsetWidth
     });
   }
 
   handleDragMove(event, isTouch) {
     const {dragStart, lastIndex, slideWidth} = this.state;
-
     const x = this.getDragX(event, isTouch);
     const offset = dragStart - x;
     const percentageOffset = offset / slideWidth;
@@ -62,7 +61,7 @@ export default class Roundabout extends React.Component {
     }
 
     this.setState({
-      index: newIndex,
+      index: newIndex
     });
   }
 
@@ -119,11 +118,11 @@ export default class Roundabout extends React.Component {
     const {children} = this.props;
     const {lastIndex} = this.state;
 
-    const nav = children.map((slide, i) => {
-      const buttonClasses = i === lastIndex ? 'Slider-navButton Slider-navButton--active' : 'Slider-navButton';
+    const nav = children.map((slide, index) => {
+      const buttonClasses = index === lastIndex ? 'Slider-navButton Slider-navButton--active' : 'Slider-navButton';
 
       return (
-        <button key={i} className={buttonClasses} onClick={(event) => this.goToSlide(i, event)} />
+        <button key={index} className={buttonClasses} onClick={(event) => this.goToSlide(index, event)} />
       );
     })
 
@@ -141,12 +140,12 @@ export default class Roundabout extends React.Component {
       <div className={arrowsClasses}>
         { loop || lastIndex > 0 ?
           <button
-            className='Slider-arrow Slider-arrow--left'
-            onClick={ (event) => this.goToSlide(lastIndex - 1, event) } /> : null }
+            className="Slider-arrow Slider-arrow--left"
+            onClick={(event) => this.goToSlide(lastIndex - 1, event)} /> : null }
         { loop || lastIndex < children.length - 1 ?
           <button
-            className='Slider-arrow Slider-arrow--right'
-            onClick={ (event) => this.goToSlide(lastIndex + 1, event) } /> : null }
+            className="Slider-arrow Slider-arrow--right"
+            onClick={(event) => this.goToSlide(lastIndex + 1, event)} /> : null }
       </div>
     );
   }
@@ -157,7 +156,7 @@ export default class Roundabout extends React.Component {
 
     const slidesStyles = {
       width: `${ 100 * children.length }%`,
-      transform: `translateX(${ -1 * index * (100 / children.length) }%)`,
+      transform: `translateX(${ -1 * index * (100 / children.length) }%)`
     };
     const slidesClasses = transition ? 'Slider-slides Slider-slides--transition' : 'Slider-slides';
 
@@ -193,5 +192,6 @@ Roundabout.propTypes = {
   loop: PropTypes.bool,
   selected: PropTypes.number,
   showArrows: PropTypes.bool,
-  showNav: PropTypes.bool
+  showNav: PropTypes.bool,
+  children: PropTypes.any
 };
